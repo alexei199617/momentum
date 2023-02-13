@@ -1,0 +1,36 @@
+body, h1, h2, h3, h4, p, ul, ol[class], li, figure, figcaption, blockquote, dl, dd, html {
+    margin: 0;
+    padding: 0;
+}
+html {
+    scroll-behavior: smooth;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    -webkit-text-size-adjust: 100%;
+    background-color: #39fc4d70;
+    overflow: hidden;
+    padding: 1%;
+}
+* {
+    box-sizing: border-box;
+}
+body {
+    width: 100%;
+    height: 100%;
+    background-color: #fc4d7070;
+}
+
+.dFlex {
+    display: flex;
+    justify-content: space-between;
+}
+div {
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    border: 1px solid black;
+}
+main {
+    margin: 250px 0;
+}
