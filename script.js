@@ -3,7 +3,9 @@ console.log('Мой diskord - gromotron5525#6640');
 console.log('Мой telegram - https://t.me/gromotron');
 // let lang = 'ru-RU';
 let lang = 'en-US';
-const greeting = ['night', 'morning', 'afternoon', 'evening'];
+const greetingEn = ['Good night', 'Good morning', 'Good afternoon', 'Good evening'];
+const greetingRu = ['Доброй ночи', 'Доброе утро', 'Добрый день', 'Добрый вечер']
+const greeting = {'en-US': greetingEn, 'ru-RU': greetingRu}
 
 
 
@@ -29,18 +31,16 @@ function showGreeting() {
 }
 function getTimeOfDay(h) {
     const num = Math.floor(h / 6);
-    const currentGreating = `Good ${greeting[num]}`;
+    const currentGreating = greeting[lang][num];
     document.querySelector('.welcome').innerHTML = currentGreating;
 }
 
 const welcInput = document.querySelector('.welcomeInput');
 welcInput.addEventListener('keyup', changeWelcName);
 function changeWelcName () {
-    // console.log(welcInput.value);
     localStorage.setItem('name', welcInput.value);
 }
-
 function showWelcName () {
     welcInput.value = localStorage.getItem('name');
 }
-showWelcName ()
+showWelcName ();
