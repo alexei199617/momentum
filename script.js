@@ -6,6 +6,7 @@ let lang = 'en-US';
 const greetingEn = ['Good night', 'Good morning', 'Good afternoon', 'Good evening'];
 const greetingRu = ['Доброй ночи', 'Доброе утро', 'Добрый день', 'Добрый вечер']
 const greeting = {'en-US': greetingEn, 'ru-RU': greetingRu}
+const settings = document.querySelector('.settings');
 
 
 
@@ -17,7 +18,6 @@ function showTime() {
     showDate();
     setTimeout(showTime, 1000);
 }
-showTime();
 function showDate() {
     const date = new Date();
     const options = {weekday: 'long', day: 'numeric', month: 'long'};
@@ -40,7 +40,38 @@ welcInput.addEventListener('keyup', changeWelcName);
 function changeWelcName () {
     localStorage.setItem('name', welcInput.value);
 }
-function showWelcName () {
+function showLocalStorage () {
     welcInput.value = localStorage.getItem('name');
+    if (localStorage.getItem('lang') == 'ru-RU' || localStorage.getItem('lang') == 'en-US') {
+        lang = localStorage.getItem('lang');
+        changeLangStorage(lang);
+    } else {
+        console.log('Page languge - English');
+    }
+    showTime();
 }
-showWelcName ();
+showLocalStorage ();
+
+
+settings.addEventListener('click', changeLang);
+function changeLang () {
+    if (lang == 'en-US') {
+        changeLangStorage('ru-RU');
+    } else {
+        changeLangStorage('en-US');
+    }
+    localStorage.setItem('lang', lang);
+    showTime();
+}
+
+function changeLangStorage (str) {
+    if (str == 'ru-RU') {
+        lang = 'ru-RU';
+        settings.innerHTML = 'RU';
+        welcInput.placeholder = '[Введите имя]';
+    } else {
+        lang = 'en-US';
+        settings.innerHTML = 'EN';
+        welcInput.placeholder = '[Enter name]';
+    }
+}

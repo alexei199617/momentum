@@ -8,7 +8,8 @@ html {
     height: 100%;
     margin: 0 auto;
     -webkit-text-size-adjust: 100%;
-    background-color: #39fc4d70;
+    /* background-color: #39fc4d70; */
+    background-color: #335;
     overflow: hidden;
     padding: 1%;
     font-family: 'Arial';
@@ -22,7 +23,7 @@ html {
 body {
     width: 100%;
     height: 100%;
-    background-color: #fc4d7070;
+    /* background-color: #fc4d7070; */
     overflow: hidden;
 }
 
@@ -85,5 +86,47 @@ main {
     border: none;
     box-shadow: none;
     outline: none;
-    /* color: red; */
+}
+.arrow {
+    background-color: orange;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+.settings {
+    background-color: yellow;
+    color: black;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    padding-top: 17px;
+    text-align: center;
+    align-items: center;
+    transition: 0.3s;
+}
+.settings:hover {
+    cursor: pointer;
+    background-color: black;
+    color: yellow;
+}
+.linksBlock {
+    text-align: center;
+    padding-top: 12px;
+    width: 100px;
+    height: 45px;
+    border-radius: 10px;
+    background-color: yellow;
+    transition: 0.3s;
+}
+.linksBlock:hover {
+    background-color: #000;
+    cursor: pointer;
+}
+.linksBlock:hover > .linksA {
+    color: yellow;
+}
+.linksA {
+    color: #000;
+    font-size: 20px;
+    text-decoration: none;
 }
