@@ -42,7 +42,7 @@ function changeWelcName () {
 }
 function showLocalStorage () {
     welcInput.value = localStorage.getItem('name');
-    if (localStorage.getItem('lang') == 'ru-RU' || localStorage.getItem('lang') == 'en-US') {
+    if (localStorage.getItem('lang')) {
         lang = localStorage.getItem('lang');
         changeLangStorage(lang);
     } else {
