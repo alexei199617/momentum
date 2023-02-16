@@ -8,14 +8,14 @@ html {
     height: 100%;
     margin: 0 auto;
     -webkit-text-size-adjust: 100%;
-    /* background-color: #39fc4d70; */
     background-color: #335;
+    background-position: center;
     overflow: hidden;
     padding: 1%;
     font-family: 'Arial';
     font-style: normal;
-    /* font-size: 24px; */
     color: #fff;
+    transition: 0.5s;
 }
 * {
     box-sizing: border-box;
@@ -46,7 +46,8 @@ main {
     margin: auto;
 }
 .time {
-    font-size: 90px;
+    font-size: 100px;
+    font-weight: bold;
     margin: auto;
     text-align: center;
     width: 400px;
